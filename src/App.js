@@ -1,7 +1,7 @@
 import React from "react";
 
 const App = () => {
-  return <div>Portfolio</div>;
+  return <div>Portfolio Website</div>;
 };
 
 export default App;
