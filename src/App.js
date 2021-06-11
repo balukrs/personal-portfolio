@@ -3,7 +3,7 @@ import Homepage from "./components/homepage/homepage";
 
 const App = () => {
   return (
-    <div className="container relative mx-auto bg-gray-400 border-box w-">
+    <div className="container relative mx-auto border-box font-cinzel">
       <Homepage />
     </div>
   );

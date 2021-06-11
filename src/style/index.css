@@ -1,10 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
 
 @layer components {
   .custom__navbar li {
     @apply mr-8;
     @apply cursor-pointer;
+  }
+  .letter__special {
+    font-size: 155px;
+    font-family: "Staatliches", cursive;
+    color: rgba(235, 234, 234, 0.8);
+    cursor: default;
+  }
+  .letter__special:hover {
+    @apply animate-rubber;
   }
 }
