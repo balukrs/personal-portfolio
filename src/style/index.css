@@ -11,10 +11,14 @@
   .letter__special {
     font-size: 155px;
     font-family: "Staatliches", cursive;
-    color: rgba(235, 234, 234, 0.8);
+    color: rgb(153, 153, 153);
     cursor: default;
   }
   .letter__special:hover {
     @apply animate-rubber;
+    color: #525151;
+  }
+  .height_1 {
+    height: 35rem;
   }
 }
