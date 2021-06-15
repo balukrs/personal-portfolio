@@ -13,6 +13,7 @@
     font-family: "Staatliches", cursive;
     color: rgb(153, 153, 153);
     cursor: default;
+    z-index: 30;
   }
   .letter__special:hover {
     @apply animate-rubber;
