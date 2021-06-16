@@ -2,10 +2,35 @@ import React from "react";
 import Mainimage from "../../assets/homepage_image.jpg";
 import Me from "../../assets/me.jpg";
 import { GrLinkedin } from "react-icons/gr";
+import { motion } from "framer-motion";
+
+const contVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duraton: 1,
+    },
+  },
+  exit: {
+    x: "-100vw",
+    transition: {
+      ease: "easeInOut",
+    },
+  },
+};
 
 const Showcase = () => {
   return (
-    <div className="flex h-screen">
+    <motion.div
+      className="container flex h-screen "
+      variants={contVariants}
+      animate="visible"
+      initial="hidden"
+      exit="exit"
+    >
       <section
         className="inline-block w-4/5 bg-fixed h-5/6"
         style={{
@@ -18,7 +43,7 @@ const Showcase = () => {
         }}
       ></section>
 
-      <section className="flex flex-col items-center content-center w-1/3 p-6 overflow-hidden h-5/6">
+      <section className="flex flex-col items-center content-center w-1/3 overflow-hidden p-7 h-5/6">
         <div className="flex justify-center">
           <img src={Me} className="w-2/5 rounded-full" />
         </div>
@@ -49,7 +74,7 @@ const Showcase = () => {
           </button>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

@@ -23,3 +23,9 @@
     height: 35rem;
   }
 }
+
+@layer base {
+  body {
+    overflow: hidden;
+  }
+}

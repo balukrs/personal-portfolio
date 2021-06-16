@@ -1,11 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="sticky top-0 z-50 w-full bg-white">
+    <div className="sticky top-0 z-50 w-full p-2 bg-white">
       <ul className="flex content-center justify-center p-3 custom__navbar">
-        <li>Home Page</li>
-        <li>About Me</li>
+        <li>
+          <Link to="/">Home Page</Link>
+        </li>
+        <li>
+          <Link to="/about">About Me</Link>
+        </li>
         <li>Projects</li>
         <li>Contact Me</li>
       </ul>
