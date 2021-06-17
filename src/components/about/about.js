@@ -1,9 +1,44 @@
 import React from "react";
 import Particles from "react-tsparticles";
+import { motion } from "framer-motion";
+
+const contVariants = {
+  hidden: {
+    opacity: 0,
+    x: 200,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      when: "beforeChildren",
+      delay: 0.5,
+    },
+  },
+};
+
+const headVariants = {
+  hidden: {
+    y: -100,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+    },
+  },
+};
 
 const About = () => {
   return (
-    <div className="w-screen h-screen">
+    <motion.div
+      className="w-screen h-screen"
+      variants={contVariants}
+      initial="hidden"
+      animate="visible"
+    >
       <div className="absolute z-30 w-full h-full">
         <Particles
           id="tsparticles"
@@ -87,11 +122,14 @@ const About = () => {
           }}
         />
       </div>
-      <div className="absolute top-0 bottom-0 left-0 right-0 flex flex-col items-center">
-        <h1 className="z-30 mt-20 text-xl text-gray-800">
+      <div className="flex flex-col items-center">
+        <h1
+          className="z-30 mt-20 text-xl text-gray-800"
+          variants={headVariants}
+        >
           H E L L O &nbsp; I ' M
         </h1>
-        <span>
+        <div>
           <div className="flex items-center">
             <h1 className="letter__special">B</h1>
             <h1 className="letter__special">A</h1>
@@ -107,9 +145,9 @@ const About = () => {
             <h1 className="letter__special">A</h1>
             <h1 className="letter__special">.</h1>
           </div>
-        </span>
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
