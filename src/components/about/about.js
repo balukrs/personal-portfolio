@@ -5,14 +5,16 @@ import { motion } from "framer-motion";
 const contVariants = {
   hidden: {
     opacity: 0,
-    x: 200,
+    x: 400,
   },
   visible: {
     opacity: 1,
     x: 0,
     transition: {
+      type: "spring",
       when: "beforeChildren",
       delay: 0.5,
+      stiffness: 150,
     },
   },
 };
@@ -39,7 +41,7 @@ const About = () => {
       initial="hidden"
       animate="visible"
     >
-      <div className="absolute z-30 w-full h-full">
+      <div className="absolute w-full h-full">
         <Particles
           id="tsparticles"
           options={{
@@ -122,11 +124,11 @@ const About = () => {
           }}
         />
       </div>
-      <div className="flex flex-col items-center">
-        <h1
-          className="z-30 mt-20 text-xl text-gray-800"
-          variants={headVariants}
-        >
+      <motion.div
+        variants={headVariants}
+        className="flex flex-col items-center"
+      >
+        <h1 className="z-30 mt-20 text-xl text-gray-800">
           H E L L O &nbsp; I ' M
         </h1>
         <div>
@@ -146,7 +148,7 @@ const About = () => {
             <h1 className="letter__special">.</h1>
           </div>
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
