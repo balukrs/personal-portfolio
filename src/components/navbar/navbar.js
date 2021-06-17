@@ -3,13 +3,18 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router";
 
 const Navbar = () => {
-  const location = useLocation();
+  const { pathname } = useLocation();
 
   return (
     <div className="sticky top-0 z-50 w-full p-2 bg-white">
       <ul className="flex content-center justify-center p-3 custom__navbar">
         <li>
-          <Link to="/">Home Page</Link>
+          <Link
+            to="/"
+            onClick={(e) => (pathname === "/" ? e.preventDefault() : null)}
+          >
+            Home Page
+          </Link>
         </li>
         <li>
           <Link to="/about">About Me</Link>

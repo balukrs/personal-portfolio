@@ -14,7 +14,6 @@ const contVariants = {
       type: "spring",
       when: "beforeChildren",
       delay: 0.5,
-      stiffness: 150,
     },
   },
 };
@@ -29,6 +28,7 @@ const headVariants = {
     opacity: 1,
     transition: {
       type: "spring",
+      stiffness: 150,
     },
   },
 };
