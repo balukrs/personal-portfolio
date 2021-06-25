@@ -5,18 +5,22 @@ import Navbar from "./components/navbar/navbar";
 import { Route, Switch } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router";
+import Store from "./context";
 
 const App = () => {
   const location = useLocation();
+
   return (
     <div className="container relative mx-auto border-box font-ibm">
-      <Navbar />
-      <AnimatePresence>
-        <Switch location={location} key={location.key}>
-          <Route path="/" exact component={Showcase}></Route>
-          <Route path="/about" component={About}></Route>
-        </Switch>
-      </AnimatePresence>
+      <Store>
+        <Navbar />
+        <AnimatePresence>
+          <Switch location={location} key={location.key}>
+            <Route path="/" exact component={Showcase}></Route>
+            <Route path="/about" component={About}></Route>
+          </Switch>
+        </AnimatePresence>
+      </Store>
     </div>
   );
 };
