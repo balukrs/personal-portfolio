@@ -2,12 +2,30 @@ import React from "react";
 import Mainimage from "../../assets/homepage_image.webp";
 import Me from "../../assets/me.webp";
 import { GrLinkedin } from "react-icons/gr";
+import { motion } from "framer-motion";
+
+const testVariable = {
+  hidden: {
+    y: "-100vh",
+  },
+  visible: {
+    y: 0,
+    transition: {
+      type: "spring",
+      duration: 0.8,
+      mass: 1.3,
+    },
+  },
+};
 
 const Content = () => {
   return (
     <>
-      <section
-        className="inline-block w-4/5 bg-fixed h-5/6"
+      <motion.section
+        variants={testVariable}
+        initial="hidden"
+        animate="visible"
+        className="inline-block w-4/5 bg-fixed h-5/6 "
         style={{
           backgroundImage: `url(${Mainimage})`,
           backgroundSize: "cover",
@@ -16,9 +34,14 @@ const Content = () => {
           boxShadow:
             "rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px",
         }}
-      ></section>
+      ></motion.section>
 
-      <section className="flex flex-col items-center content-center w-1/3 overflow-hidden p-7 h-5/6">
+      <motion.section
+        variants={testVariable}
+        initial="hidden"
+        animate="visible"
+        className="flex flex-col items-center content-center w-1/3 overflow-hidden p-7 h-5/6 "
+      >
         <div className="flex justify-center">
           <img src={Me} className="w-2/5 rounded-full" />
         </div>
@@ -26,9 +49,7 @@ const Content = () => {
           <h3 className="text-2xl font-bold">Balu Krishna R.</h3>
         </div>
         <div className="flex flex-col items-center justify-center">
-          <span className="text-lg font-extralight">
-            Web Developer, React JS
-          </span>
+          <span className="text-lg font-light">Web Developer, React JS</span>
           <span className="mt-3 text-sm text-center font-extralight">
             B-Tech (Applied Electronics and Instrumentation)
           </span>
@@ -44,11 +65,11 @@ const Content = () => {
           </a>
         </div>
         <div>
-          <button className="p-3 text-gray-100 transition duration-300 bg-gray-700 border-2 border-gray-700 hover:bg-white hover:text-gray-900">
+          <button className="p-2 text-gray-100 transition duration-300 bg-gray-700 border-2 border-gray-700 shadow-xl hover:bg-white hover:text-gray-900">
             Download CV
           </button>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 };

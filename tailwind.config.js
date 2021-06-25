@@ -3,8 +3,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      cinzel: ["Cinzel", "serif"],
-      amiri: ["Amiri", "serif"],
+      ibm: ["IBM Plex Sans", "sans-serif"],
     },
     screens: {},
     extend: {

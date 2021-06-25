@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
 
 @layer components {
   .custom__navbar li {
@@ -9,7 +10,7 @@
     @apply cursor-pointer;
   }
   .letter__special {
-    font-size: 155px;
+    font-size: 185px;
     font-family: "Staatliches", cursive;
     color: rgb(153, 153, 153);
     cursor: default;
@@ -21,6 +22,36 @@
   }
   .height_1 {
     height: 35rem;
+  }
+  .under__effect {
+    display: inline-block;
+    position: relative;
+  }
+  .under__effect:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transition: transform 0.25s ease-out;
+  }
+
+  .under__effect:hover:after {
+    transform: scaleX(1);
+  }
+  .under__lock {
+    border: 2px solid black;
+    padding: 0px 4px;
+    box-shadow: 0 8px 6px -8px black;
+  }
+  .under__lock:hover:after {
+    transform: scaleX(0);
+  }
+  .handwritting-font {
+    font-family: "Shadows Into Light", cursive;
   }
 }
 

@@ -8,7 +8,9 @@ const Navbar = () => {
   return (
     <div className="sticky top-0 z-50 w-full p-2 bg-white">
       <ul className="flex content-center justify-center p-3 custom__navbar">
-        <li>
+        <li
+          className={`under__effect ${pathname === "/" ? "under__lock" : ""}`}
+        >
           <Link
             to="/"
             onClick={(e) => (pathname === "/" ? e.preventDefault() : null)}
@@ -16,11 +18,15 @@ const Navbar = () => {
             Home Page
           </Link>
         </li>
-        <li>
+        <li
+          className={`under__effect ${
+            pathname === "/about" ? "under__lock" : ""
+          }`}
+        >
           <Link to="/about">About Me</Link>
         </li>
-        <li>Projects</li>
-        <li>Contact Me</li>
+        <li className="under__effect">Projects</li>
+        <li className="under__effect">Contact Me</li>
       </ul>
     </div>
   );

@@ -9,7 +9,7 @@ import { useLocation } from "react-router";
 const App = () => {
   const location = useLocation();
   return (
-    <div className="container relative mx-auto border-box font-cinzel">
+    <div className="container relative mx-auto border-box font-ibm">
       <Navbar />
       <AnimatePresence>
         <Switch location={location} key={location.key}>

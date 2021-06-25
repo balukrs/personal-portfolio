@@ -13,7 +13,7 @@ const contVariants = {
     transition: {
       type: "spring",
       when: "beforeChildren",
-      delay: 0.5,
+      delay: 0.2,
     },
   },
 };
@@ -41,7 +41,7 @@ const About = () => {
       initial="hidden"
       animate="visible"
     >
-      <div className="absolute w-full h-full">
+      <div className="absolute z-20 w-full h-full">
         <Particles
           id="tsparticles"
           options={{
@@ -148,6 +148,19 @@ const About = () => {
             <h1 className="letter__special">.</h1>
           </div>
         </div>
+      </motion.div>
+      <motion.div className="absolute left-0 right-0 z-20 w-3/6 p-2 m-auto text-lg bg-gray-200 border rounded bg-opacity-80 handwritting-font">
+        <p>
+          " By default, Motion will create an appropriate animation for a snappy
+          transition based on the types of value being animated. For instance,
+          physical properties like x or scale will be animated via a spring
+          simulation. Whereas values like opacity or color will be animated with
+          a tween. When a component mounts, it'll automatically animate to the
+          values in animate if they're different from those defined in style or
+          initial. You can set the initial prop to false to use the value in
+          animate as the component's mounted state to disable mount animations.
+          "
+        </p>
       </motion.div>
     </motion.div>
   );
