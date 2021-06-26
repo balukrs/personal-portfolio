@@ -99,7 +99,7 @@ const About = () => {
                 enable: true,
                 outMode: "bounce",
                 random: false,
-                speed: 6,
+                speed: 3,
                 straight: false,
               },
               number: {
@@ -107,13 +107,13 @@ const About = () => {
                   enable: true,
                   value_area: 800,
                 },
-                value: 80,
+                value: 60,
               },
               opacity: {
                 value: 0.5,
               },
               shape: {
-                type: "circle",
+                type: "square",
               },
               size: {
                 random: true,

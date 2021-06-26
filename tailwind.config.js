@@ -28,9 +28,15 @@ module.exports = {
             transform: "scale3d(1, 1, 1)",
           },
         },
+        mymove: {
+          "50%": {
+            backgroundPosition: "center",
+          },
+        },
       },
       animation: {
         rubber: "rubber 1s",
+        mymove: "mymove 18s infinite",
       },
     },
   },

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import Mainimage from "../../assets/homepage_image.webp";
+import homeimage from "../../assets/loader/img_4.webp";
 import aboutimage from "../../assets/loader/img_1.webp";
 import projectimage from "../../assets/loader/img_2.webp";
 import contactimage from "../../assets/loader/img_3.webp";
@@ -20,14 +20,11 @@ const testVariable = {
       mass: 1.3,
     },
   },
-  toggle: {
-    x: [100, 80, 50, 0],
-  },
 };
 
 const Content = () => {
   const [state, dispatch] = useContext(Context);
-  const [defimg, setDefimg] = useState(Mainimage);
+  const [defimg, setDefimg] = useState(homeimage);
 
   useEffect(() => {
     switch (state.hoverloc) {
@@ -41,7 +38,7 @@ const Content = () => {
         setDefimg(contactimage);
         break;
       default:
-        setDefimg(Mainimage);
+        setDefimg(homeimage);
         break;
     }
   }, [state]);
@@ -52,15 +49,14 @@ const Content = () => {
         variants={testVariable}
         initial="hidden"
         animate="visible"
-        className="inline-block w-4/5 bg-fixed h-5/6 "
+        className="inline-block w-4/5 mt-3 bg-fixed h-5/6 animate-mymove"
         style={{
           backgroundImage: `url(${defimg})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          boxShadow:
-            "rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px",
+          backgroundPosition: "0% 10%",
           transition: "background linear 0.5s",
+          filter: "drop-shadow(0 0 0.3rem black)",
         }}
       ></motion.section>
 
