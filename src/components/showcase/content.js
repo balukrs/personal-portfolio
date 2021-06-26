@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Mainimage from "../../assets/homepage_image.webp";
+import aboutimage from "../../assets/loader/img_1.webp";
+import projectimage from "../../assets/loader/img_2.webp";
+import contactimage from "../../assets/loader/img_3.webp";
 import Me from "../../assets/me.webp";
 import { GrLinkedin } from "react-icons/gr";
 import { motion } from "framer-motion";
+import { Context } from "../../context";
 
 const testVariable = {
   hidden: {
@@ -16,9 +20,32 @@ const testVariable = {
       mass: 1.3,
     },
   },
+  toggle: {
+    x: [100, 80, 50, 0],
+  },
 };
 
 const Content = () => {
+  const [state, dispatch] = useContext(Context);
+  const [defimg, setDefimg] = useState(Mainimage);
+
+  useEffect(() => {
+    switch (state.hoverloc) {
+      case "/about":
+        setDefimg(aboutimage);
+        break;
+      case "/projects":
+        setDefimg(projectimage);
+        break;
+      case "/contact":
+        setDefimg(contactimage);
+        break;
+      default:
+        setDefimg(Mainimage);
+        break;
+    }
+  }, [state]);
+
   return (
     <>
       <motion.section
@@ -27,12 +54,13 @@ const Content = () => {
         animate="visible"
         className="inline-block w-4/5 bg-fixed h-5/6 "
         style={{
-          backgroundImage: `url(${Mainimage})`,
+          backgroundImage: `url(${defimg})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          backgroundPosition: "center 25%",
+          backgroundPosition: "center",
           boxShadow:
             "rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px",
+          transition: "background linear 0.5s",
         }}
       ></motion.section>
 
