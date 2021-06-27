@@ -161,7 +161,7 @@ const Loader = ({ trigger }) => {
           initial="hidden"
           animate={img_4Control}
           exit="exitdown"
-          className="w-1/3 h-4/5"
+          className="w-1/3 mr-2 h-4/5"
           style={{
             backgroundImage: `url(${img4})`,
             backgroundSize: "cover",

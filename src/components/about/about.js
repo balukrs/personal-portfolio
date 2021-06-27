@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Particles from "react-tsparticles";
 import { motion, useAnimation } from "framer-motion";
 
@@ -46,6 +46,10 @@ const contVariants = {
 };
 
 const About = () => {
+  const [animate1, setAnimate1] = useState("");
+  const [animate2, setAnimate2] = useState("");
+  const [animate3, setAnimate3] = useState("");
+  const [messg, setMessg] = useState("H E L L O... I`M ");
   const h1control = useAnimation();
   const namecontrol = useAnimation();
   const controls = useAnimation();
@@ -53,9 +57,22 @@ const About = () => {
   const subRoutine = async () => {
     await h1control.start("vise");
     await namecontrol.start("vise");
-    controls.start("aboutvisible");
-    h1control.start("scaledown");
-    namecontrol.start("scaledown");
+    await (() => {
+      controls.start("aboutvisible");
+      h1control.start("scaledown");
+      namecontrol.start("scaledown");
+    })();
+    setTimeout(function () {
+      setAnimate1("about-animate");
+      setMessg("THANK YOU...");
+    }, 1000);
+    setTimeout(function () {
+      setAnimate2("about-animate");
+    }, 2000);
+    setTimeout(function () {
+      setAnimate3("about-animate");
+      setMessg("H E L L O... I`M ");
+    }, 3000);
   };
 
   return (
@@ -157,8 +174,10 @@ const About = () => {
               variants={contVariants}
               initial="hide"
               animate={h1control}
+              style={{ transition: "all ease" }}
             >
-              H E L L O &nbsp; I ' M
+              {messg}
+              {/* H E L L O &nbsp; I ' M */}
             </motion.h1>
           </div>
           <div>
@@ -170,31 +189,38 @@ const About = () => {
               layout
             >
               <div className="flex">
-                <h1 className="letter__special">B</h1>
+                <h1 className={`letter__special ${animate1}`}>B</h1>
                 <h1 className="letter__special">A</h1>
                 <h1 className="letter__special">L</h1>
                 <h1 className="letter__special">U</h1>
                 <h1 className="letter__special">&nbsp;</h1>
               </div>
               <div className="flex">
-                <h1 className="letter__special">K</h1>
+                <h1 className={`letter__special ${animate2}`}>K</h1>
                 <h1 className="letter__special">R</h1>
                 <h1 className="letter__special">I</h1>
                 <h1 className="letter__special">S</h1>
                 <h1 className="letter__special">H</h1>
                 <h1 className="letter__special">N</h1>
                 <h1 className="letter__special">A</h1>
-                <h1 className="letter__special">.</h1>
+                <h1 className={`letter__special ${animate3}`}>.</h1>
               </div>
             </motion.div>
           </div>
         </div>
       </div>
       <motion.div
-        className="absolute z-10 w-1/3 p-2 text-lg bg-gray-200 border rounded top-20 right-20 bg-opacity-80 handwritting-font h-4/6"
+        className="absolute z-10 w-1/3 h-auto p-2 text-lg border rounded top-20 right-20 bg-opacity-80 handwritting-font"
         variants={contVariants}
         initial="abouthide"
         animate={controls}
+        style={{
+          background: "rgba( 255, 255, 255, 0.5 )",
+          boxShadow: "0 1px 2px 0 black",
+          backdropFilter: "blur( 4.5px )",
+          borderRadius: "10px",
+          border: "1px solid rgba( 255, 255, 255, 0.18 )",
+        }}
       >
         <p>
           " By default, Motion will create an appropriate animation for a snappy
