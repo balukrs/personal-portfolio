@@ -1,47 +1,72 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Particles from "react-tsparticles";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 const contVariants = {
   hidden: {
     opacity: 0,
-    x: 400,
   },
   visible: {
     opacity: 1,
-    x: 0,
+
     transition: {
-      type: "spring",
-      when: "beforeChildren",
-      delay: 0.2,
+      duraton: 1,
     },
   },
-};
-
-const headVariants = {
-  hidden: {
-    y: -100,
+  hide: {
+    y: 40,
     opacity: 0,
   },
-  visible: {
+  vise: {
     y: 0,
     opacity: 1,
+
     transition: {
-      type: "spring",
-      stiffness: 150,
+      type: "tween",
+      duration: 0.5,
+    },
+  },
+  abouthide: {
+    scale: 0,
+  },
+  aboutvisible: {
+    scale: 1.2,
+    transition: {
+      type: "tween",
+      duration: 0.5,
+    },
+  },
+  scaledown: {
+    scale: 0.7,
+    transition: {
+      type: "tween",
+      duration: 0.5,
     },
   },
 };
 
 const About = () => {
+  const h1control = useAnimation();
+  const namecontrol = useAnimation();
+  const controls = useAnimation();
+
+  const subRoutine = async () => {
+    await h1control.start("vise");
+    await namecontrol.start("vise");
+    controls.start("aboutvisible");
+    h1control.start("scaledown");
+    namecontrol.start("scaledown");
+  };
+
   return (
     <motion.div
-      className="w-screen h-screen"
+      className="relative flex flex-col w-screen h-screen"
       variants={contVariants}
       initial="hidden"
       animate="visible"
+      onAnimationComplete={() => subRoutine()}
     >
-      <div className="absolute z-20 w-full h-full">
+      <div className="w-full h-full">
         <Particles
           id="tsparticles"
           options={{
@@ -55,11 +80,11 @@ const About = () => {
               detectsOn: "canvas",
               events: {
                 onClick: {
-                  enable: true,
+                  enable: false,
                   mode: "push",
                 },
                 onHover: {
-                  enable: true,
+                  enable: false,
                   mode: "repulse",
                 },
                 resize: true,
@@ -113,7 +138,7 @@ const About = () => {
                 value: 0.5,
               },
               shape: {
-                type: "square",
+                type: "circle",
               },
               size: {
                 random: true,
@@ -124,32 +149,53 @@ const About = () => {
           }}
         />
       </div>
-      <motion.div
-        variants={headVariants}
-        className="flex flex-col items-center"
-      >
-        <h1 className="z-30 mt-20 text-xl text-gray-800">
-          H E L L O &nbsp; I ' M
-        </h1>
-        <div>
-          <div className="flex items-center">
-            <h1 className="letter__special">B</h1>
-            <h1 className="letter__special">A</h1>
-            <h1 className="letter__special">L</h1>
-            <h1 className="letter__special">U</h1>
-            <h1 className="letter__special">&nbsp;</h1>
-            <h1 className="letter__special">K</h1>
-            <h1 className="letter__special">R</h1>
-            <h1 className="letter__special">I</h1>
-            <h1 className="letter__special">S</h1>
-            <h1 className="letter__special">H</h1>
-            <h1 className="letter__special">N</h1>
-            <h1 className="letter__special">A</h1>
-            <h1 className="letter__special">.</h1>
+      <div className="absolute left-20 ">
+        <div className="flex flex-col">
+          <div>
+            <motion.h1
+              className="z-30 mt-20 text-6xl text-gray-800"
+              variants={contVariants}
+              initial="hide"
+              animate={h1control}
+            >
+              H E L L O &nbsp; I ' M
+            </motion.h1>
+          </div>
+          <div>
+            <motion.div
+              className="flex flex-col justify-center"
+              variants={contVariants}
+              initial="hide"
+              animate={namecontrol}
+              layout
+            >
+              <div className="flex">
+                <h1 className="letter__special">B</h1>
+                <h1 className="letter__special">A</h1>
+                <h1 className="letter__special">L</h1>
+                <h1 className="letter__special">U</h1>
+                <h1 className="letter__special">&nbsp;</h1>
+              </div>
+              <div className="flex">
+                <h1 className="letter__special">K</h1>
+                <h1 className="letter__special">R</h1>
+                <h1 className="letter__special">I</h1>
+                <h1 className="letter__special">S</h1>
+                <h1 className="letter__special">H</h1>
+                <h1 className="letter__special">N</h1>
+                <h1 className="letter__special">A</h1>
+                <h1 className="letter__special">.</h1>
+              </div>
+            </motion.div>
           </div>
         </div>
-      </motion.div>
-      <motion.div className="absolute left-0 right-0 z-20 w-3/6 p-2 m-auto text-lg bg-gray-200 border rounded bg-opacity-80 handwritting-font">
+      </div>
+      <motion.div
+        className="absolute z-10 w-1/3 p-2 text-lg bg-gray-200 border rounded top-20 right-20 bg-opacity-80 handwritting-font h-4/6"
+        variants={contVariants}
+        initial="abouthide"
+        animate={controls}
+      >
         <p>
           " By default, Motion will create an appropriate animation for a snappy
           transition based on the types of value being animated. For instance,
