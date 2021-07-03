@@ -41,15 +41,15 @@ const testVariable = {
     },
   },
   messagehidden: {
-    x: -300,
+    x: "-100vw",
     opacity: 0,
   },
   messagevisible: {
     x: 0,
     opacity: 1,
     transition: {
-      type: "spring",
-      duration: 5,
+      type: "tween",
+      duration: 3,
       delay: 0.5,
     },
   },

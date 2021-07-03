@@ -29,14 +29,20 @@ module.exports = {
           },
         },
         mymove: {
+          "0%": {
+            opacity: 0,
+          },
           "50%": {
-            backgroundPosition: "center",
+            opacity: 0.5,
+          },
+          "100%": {
+            opacity: 1,
           },
         },
       },
       animation: {
         rubber: "rubber 1s",
-        mymove: "mymove 18s infinite",
+        mymove: "mymove 0.5s ease",
       },
     },
   },

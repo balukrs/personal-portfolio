@@ -49,14 +49,9 @@ const Content = () => {
         variants={testVariable}
         initial="hidden"
         animate="visible"
-        className="inline-block w-9/12 mt-2 bg-fixed rounded-r-lg h-5/6 animate-mymove"
+        className="inline-block w-9/12 mt-2 bg-fixed rounded-r-lg h-5/6 animate-mymove backgroundEffect"
         style={{
           backgroundImage: `url(${defimg})`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "0% 10%",
-          transition: "background linear 0.5s",
-          boxShadow: "0 1px 2px 0 black",
         }}
       ></motion.section>
 
@@ -92,7 +87,7 @@ const Content = () => {
             </a>
           </div>
           <div>
-            <button className="p-2 text-gray-100 transition duration-300 bg-gray-700 border-2 border-gray-700 shadow-xl hover:bg-white hover:text-gray-900">
+            <button className="p-2 text-gray-100 transition duration-300 bg-gray-700 border-2 border-gray-700 rounded hover:bg-white hover:text-gray-900 drop-shadow-xl">
               Download CV
             </button>
           </div>

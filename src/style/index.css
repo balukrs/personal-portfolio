@@ -63,6 +63,17 @@
     @apply animate-rubber;
     color: #5e5e5e;
   }
+  .backgroundEffect {
+    backgroundsize: "cover";
+    background-position: 25% 75%;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-position: 25% 75%;
+    -webkit-background-position: 25% 75%;
+    -o-background-position: 25% 75%;
+  }
 }
 
 @layer base {

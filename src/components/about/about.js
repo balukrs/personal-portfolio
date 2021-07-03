@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Particles from "react-tsparticles";
 import { motion, useAnimation } from "framer-motion";
 
 const contVariants = {
@@ -45,6 +44,51 @@ const contVariants = {
   },
 };
 
+const bgVariants = {
+  hidden: {
+    scale: 1,
+    rotation: 0.02,
+  },
+  ball1: {
+    scale: [8, 1, 8],
+    rotation: 0.02,
+    transition: {
+      type: "ease",
+      duration: 3,
+      repeat: Infinity,
+    },
+  },
+  ball2: {
+    scale: [16, 1, 16],
+    rotation: 0.02,
+    transition: {
+      type: "ease",
+      delay: 2,
+      duration: 3,
+      repeat: Infinity,
+    },
+  },
+  // ball3: {
+  //   scale: [32, 1, 32],
+  //   rotation: 0.02,
+  //   transition: {
+  //     type: "ease",
+  //     duration: 3,
+  //     delay: 4,
+  //     repeat: Infinity,
+  //   },
+  // },
+  // ball4: {
+  //   scale: [20, 1, 20],
+  //   rotation: 0.02,
+  //   transition: {
+  //     type: "ease",
+  //     duration: 3,
+  //     repeat: Infinity,
+  //   },
+  // },
+};
+
 const About = () => {
   const [animate1, setAnimate1] = useState("");
   const [animate2, setAnimate2] = useState("");
@@ -84,89 +128,32 @@ const About = () => {
       onAnimationComplete={() => subRoutine()}
     >
       <div className="w-full h-full">
-        <Particles
-          id="tsparticles"
-          options={{
-            background: {
-              color: {
-                value: "#ffffff",
-              },
-            },
-            fpsLimit: 60,
-            interactivity: {
-              detectsOn: "canvas",
-              events: {
-                onClick: {
-                  enable: false,
-                  mode: "push",
-                },
-                onHover: {
-                  enable: false,
-                  mode: "repulse",
-                },
-                resize: true,
-              },
-              modes: {
-                bubble: {
-                  distance: 400,
-                  duration: 2,
-                  opacity: 0.8,
-                  size: 40,
-                },
-                push: {
-                  quantity: 4,
-                },
-                repulse: {
-                  distance: 200,
-                  duration: 0.4,
-                },
-              },
-            },
-            particles: {
-              color: {
-                value: "#000000",
-              },
-              links: {
-                color: "#000000",
-                distance: 150,
-                enable: true,
-                opacity: 0.5,
-                width: 1,
-              },
-              collisions: {
-                enable: true,
-              },
-              move: {
-                direction: "none",
-                enable: true,
-                outMode: "bounce",
-                random: false,
-                speed: 3,
-                straight: false,
-              },
-              number: {
-                density: {
-                  enable: true,
-                  value_area: 800,
-                },
-                value: 60,
-              },
-              opacity: {
-                value: 0.5,
-              },
-              shape: {
-                type: "circle",
-              },
-              size: {
-                random: true,
-                value: 5,
-              },
-            },
-            detectRetina: true,
-          }}
-        />
+        <motion.div
+          className="absolute z-10 w-8 h-8 bg-gray-600 rounded-full -left-3 bottom-12"
+          variants={bgVariants}
+          initial="hidden"
+          animate="ball1"
+        ></motion.div>
+        <motion.div
+          className="absolute z-10 w-8 h-8 bg-gray-400 rounded-full -left-3 bottom-12"
+          variants={bgVariants}
+          initial="hidden"
+          animate="ball2"
+        ></motion.div>
+        {/* <div
+          className="absolute w-8 h-8 bg-gray-200 rounded-full -left-3 bottom-12"
+          variants={bgVariants}
+          initial="hidden"
+          animate="ball3"
+        ></div>
+        <div
+          className="absolute z-10 w-8 h-8 bg-gray-100 rounded-full -left-3 bottom-12"
+          variants={bgVariants}
+          initial="hidden"
+          animate="ball4"
+        ></div> */}
       </div>
-      <div className="absolute left-20 ">
+      <div className="absolute left-20">
         <div className="flex flex-col">
           <div>
             <motion.h1
@@ -177,7 +164,6 @@ const About = () => {
               style={{ transition: "all ease" }}
             >
               {messg}
-              {/* H E L L O &nbsp; I ' M */}
             </motion.h1>
           </div>
           <div>
@@ -216,10 +202,9 @@ const About = () => {
         animate={controls}
         style={{
           background: "rgba( 255, 255, 255, 0.5 )",
-          boxShadow: "0 1px 2px 0 black",
           backdropFilter: "blur( 4.5px )",
           borderRadius: "10px",
-          border: "1px solid rgba( 255, 255, 255, 0.18 )",
+          border: "1px solid gray",
         }}
       >
         <p>
