@@ -42,15 +42,18 @@ const testVariable = {
   },
   messagehidden: {
     x: "-100vw",
+    rotation: 0.02,
     opacity: 0,
   },
   messagevisible: {
     x: 0,
     opacity: 1,
+    rotation: 0.02,
     transition: {
-      type: "tween",
+      type: "spring",
       duration: 3,
       delay: 0.5,
+      stiffness: 150,
     },
   },
   exitup: {

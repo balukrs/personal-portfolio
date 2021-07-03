@@ -50,43 +50,48 @@ const bgVariants = {
     rotation: 0.02,
   },
   ball1: {
-    scale: [8, 1, 8],
+    scale: 8,
     rotation: 0.02,
     transition: {
-      type: "ease",
-      duration: 3,
       repeat: Infinity,
+      type: "ease",
+      duration: 2.5,
+      repeatType: "reverse",
     },
   },
   ball2: {
-    scale: [16, 1, 16],
+    scale: 16,
     rotation: 0.02,
     transition: {
-      type: "ease",
-      delay: 2,
-      duration: 3,
       repeat: Infinity,
+      type: "ease",
+      delay: 1,
+      duration: 2.5,
+      repeatType: "reverse",
     },
   },
-  // ball3: {
-  //   scale: [32, 1, 32],
-  //   rotation: 0.02,
-  //   transition: {
-  //     type: "ease",
-  //     duration: 3,
-  //     delay: 4,
-  //     repeat: Infinity,
-  //   },
-  // },
-  // ball4: {
-  //   scale: [20, 1, 20],
-  //   rotation: 0.02,
-  //   transition: {
-  //     type: "ease",
-  //     duration: 3,
-  //     repeat: Infinity,
-  //   },
-  // },
+  ball3: {
+    scale: 32,
+    rotation: 0.02,
+    transition: {
+      repeat: Infinity,
+      type: "ease",
+      duration: 2.5,
+      delay: 1.5,
+      repeatType: "reverse",
+    },
+  },
+  ball4: {
+    scale: 64,
+    rotation: 0.02,
+    transition: {
+      repeat: Infinity,
+      type: "ease",
+      duration: 2.5,
+      delay: 2,
+      repeatType: "reverse",
+    },
+  },
 };
 
 const About = () => {
@@ -129,29 +134,33 @@ const About = () => {
     >
       <div className="w-full h-full">
         <motion.div
-          className="absolute z-10 w-8 h-8 bg-gray-600 rounded-full -left-3 bottom-12"
+          className="absolute w-8 h-8 bg-gray-400 rounded-full -left-3 bottom-12 opacity-90"
           variants={bgVariants}
           initial="hidden"
           animate="ball1"
+          style={{ zIndex: -1 }}
         ></motion.div>
         <motion.div
-          className="absolute z-10 w-8 h-8 bg-gray-400 rounded-full -left-3 bottom-12"
+          className="absolute w-8 h-8 bg-gray-300 rounded-full -left-3 bottom-12"
           variants={bgVariants}
           initial="hidden"
           animate="ball2"
+          style={{ zIndex: -2 }}
         ></motion.div>
-        {/* <div
+        <motion.div
           className="absolute w-8 h-8 bg-gray-200 rounded-full -left-3 bottom-12"
           variants={bgVariants}
           initial="hidden"
           animate="ball3"
-        ></div>
-        <div
-          className="absolute z-10 w-8 h-8 bg-gray-100 rounded-full -left-3 bottom-12"
+          style={{ zIndex: -3 }}
+        ></motion.div>
+        <motion.div
+          className="absolute w-8 h-8 bg-gray-100 rounded-full -left-3 bottom-12"
           variants={bgVariants}
           initial="hidden"
           animate="ball4"
-        ></div> */}
+          style={{ zIndex: -4 }}
+        ></motion.div>
       </div>
       <div className="absolute left-20">
         <div className="flex flex-col">
@@ -168,7 +177,7 @@ const About = () => {
           </div>
           <div>
             <motion.div
-              className="flex flex-col justify-center"
+              className="flex flex-col justify-center "
               variants={contVariants}
               initial="hide"
               animate={namecontrol}

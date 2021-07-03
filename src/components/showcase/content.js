@@ -5,7 +5,7 @@ import projectimage from "../../assets/loader/img_2.webp";
 import contactimage from "../../assets/loader/img_3.webp";
 import Me from "../../assets/me.webp";
 import { GrLinkedin } from "react-icons/gr";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { Context } from "../../context";
 
 const testVariable = {
@@ -20,24 +20,37 @@ const testVariable = {
       mass: 1.3,
     },
   },
+  extravisible: {
+    opacity: [0, 1],
+    transition: {
+      type: "ease",
+      duration: 0.5,
+    },
+  },
 };
 
 const Content = () => {
   const [state, dispatch] = useContext(Context);
   const [defimg, setDefimg] = useState(homeimage);
+  const Control = useAnimation();
 
   useEffect(() => {
+    Control.start("visible");
     switch (state.hoverloc) {
       case "/about":
+        Control.start("extravisible");
         setDefimg(aboutimage);
         break;
       case "/projects":
+        Control.start("extravisible");
         setDefimg(projectimage);
         break;
       case "/contact":
+        Control.start("extravisible");
         setDefimg(contactimage);
         break;
       default:
+        Control.start("extravisible");
         setDefimg(homeimage);
         break;
     }
@@ -48,7 +61,7 @@ const Content = () => {
       <motion.section
         variants={testVariable}
         initial="hidden"
-        animate="visible"
+        animate={Control}
         className="inline-block w-9/12 mt-2 bg-fixed rounded-r-lg h-5/6 animate-mymove backgroundEffect"
         style={{
           backgroundImage: `url(${defimg})`,
