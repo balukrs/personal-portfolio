@@ -74,10 +74,13 @@
     -webkit-background-position: 25% 75%;
     -o-background-position: 25% 75%;
   }
+  .projectht {
+    height: 300vh;
+  }
 }
 
 @layer base {
-  body {
+  /* body {
     overflow: hidden;
-  }
+  } */
 }

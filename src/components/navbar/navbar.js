@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router";
 import { Context } from "../../context";
@@ -6,6 +6,14 @@ import { Context } from "../../context";
 const Navbar = () => {
   const [state, dispatch] = useContext(Context);
   const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (pathname == "/projects") {
+      document.body.style.overflow = "visible";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
+  }, [pathname]);
 
   const disPatcher = (val) => {
     dispatch({ type: "UPDATE_LOC", payload: val });
@@ -30,13 +38,27 @@ const Navbar = () => {
           }`}
           onMouseEnter={() => disPatcher("/about")}
         >
-          <Link to="/about">About Me</Link>
+          <Link
+            to="/about"
+            onClick={(e) => (pathname === "/about" ? e.preventDefault() : null)}
+          >
+            About Me
+          </Link>
         </li>
         <li
-          className="under__effect"
+          className={`under__effect ${
+            pathname === "/projects" ? "under__lock" : ""
+          }`}
           onMouseEnter={() => disPatcher("/projects")}
         >
-          Projects
+          <Link
+            to="/projects"
+            onClick={(e) =>
+              pathname === "/projects" ? e.preventDefault() : null
+            }
+          >
+            Projects
+          </Link>
         </li>
         <li
           className="under__effect"

@@ -27,7 +27,7 @@ const Showcase = () => {
 
   return (
     <motion.div
-      className="container flex w-screen h-screen bg-rgb2"
+      className="container flex w-screen h-screen overflow-y-hidden"
       variants={contVariants}
       animate="visible"
       initial="hidden"

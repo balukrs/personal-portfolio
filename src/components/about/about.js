@@ -42,6 +42,12 @@ const contVariants = {
       duration: 0.5,
     },
   },
+  exit: {
+    x: "-100vw",
+    transition: {
+      ease: "easeInOut",
+    },
+  },
 };
 
 const bgVariants = {
@@ -130,6 +136,7 @@ const About = () => {
       variants={contVariants}
       initial="hidden"
       animate="visible"
+      exit="exit"
       onAnimationComplete={() => subRoutine()}
     >
       <div className="w-full h-full">

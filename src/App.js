@@ -2,6 +2,7 @@ import React from "react";
 import Showcase from "./components/showcase/showcase";
 import About from "./components/about/about";
 import Navbar from "./components/navbar/navbar";
+import Project from "./components/projects/main";
 import { Route, Switch } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router";
@@ -18,6 +19,7 @@ const App = () => {
           <Switch location={location} key={location.key}>
             <Route path="/" exact component={Showcase}></Route>
             <Route path="/about" component={About}></Route>
+            <Route path="/projects" component={Project}></Route>
           </Switch>
         </AnimatePresence>
       </Store>
