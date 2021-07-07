@@ -77,10 +77,26 @@
   .projectht {
     height: 300vh;
   }
+  .img-wrap:before {
+    content: "";
+    background-image: linear-gradient(
+      to top,
+      rgba(239, 239, 239, 255),
+      rgba(239, 239, 239, 0)
+    );
+    position: absolute;
+    height: 40px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateY(32px);
+  }
+  .img-wrap:after {
+    content: "";
+    display: block;
+    height: 100vh;
+  }
 }
 
 @layer base {
-  /* body {
-    overflow: hidden;
-  } */
 }
