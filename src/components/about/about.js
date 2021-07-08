@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 
 const contVariants = {
@@ -212,16 +212,10 @@ const About = () => {
         </div>
       </div>
       <motion.div
-        className="absolute z-10 w-1/3 h-auto p-2 text-lg border rounded top-20 right-20 bg-opacity-80 handwritting-font"
+        className="absolute z-10 w-1/3 h-auto p-2 text-lg bg-white bg-opacity-50 border rounded top-20 right-20 handwritting-font blur"
         variants={contVariants}
         initial="abouthide"
         animate={controls}
-        style={{
-          background: "rgba( 255, 255, 255, 0.5 )",
-          backdropFilter: "blur( 4.5px )",
-          borderRadius: "10px",
-          border: "1px solid gray",
-        }}
       >
         <p>
           " By default, Motion will create an appropriate animation for a snappy
