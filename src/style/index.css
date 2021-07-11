@@ -77,24 +77,30 @@
   .projectht {
     height: 300vh;
   }
-  .img-wrap:before {
-    content: "";
-    background-image: linear-gradient(
-      to top,
-      rgba(239, 239, 239, 255),
-      rgba(239, 239, 239, 0)
-    );
-    position: absolute;
-    height: 40px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transform: translateY(32px);
+  .prj__icon {
+    font-size: 15rem;
+    font-weight: bold;
+    opacity: 0.9;
+    color: #bfbfbf;
   }
-  .img-wrap:after {
+  .overlay__normal {
+    position: relative;
+    display: flex;
+    mix-blend-mode: difference;
+  }
+  .overlay__normal > * {
+    z-index: 100;
+  }
+
+  .overlay__normal:after {
     content: "";
-    display: block;
-    height: 100vh;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    opacity: 0.7;
   }
 }
 

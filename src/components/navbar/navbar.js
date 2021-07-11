@@ -9,7 +9,8 @@ const Navbar = () => {
 
   useEffect(() => {
     if (pathname == "/projects") {
-      document.body.style.overflow = "visible";
+      document.body.style.overflowY = "visible";
+      document.body.style.overflowX = "hidden";
     } else {
       document.body.style.overflow = "hidden";
     }
