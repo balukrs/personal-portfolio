@@ -86,19 +86,20 @@ const Projectmain = () => {
         <div
           className="absolute z-10 left-1/2 overlay__normal"
           style={{
-            transform: "translate(-50%, 10%)",
+            transform: "translate(-50%, 20%)",
           }}
           ref={headRef}
         >
           <motion.h1 className=" prj__icon">PROJECTS.</motion.h1>
         </div>
         <div
-          className="flex w-2/4 m-auto bg-cover border-8 border-gray-200 rounded-sm h-4/5"
+          className="flex w-2/4 m-auto bg-cover rounded-sm h-4/5"
           style={{
             backgroundImage: `url(${Projpic})`,
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
+            border: "18px solid #e0e0e0",
           }}
         ></div>
         <div
