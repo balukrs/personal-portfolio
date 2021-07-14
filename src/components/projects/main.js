@@ -1,12 +1,13 @@
-import React, { useRef, useLayoutEffect } from "react";
+import React, { useRef, useLayoutEffect, useState } from "react";
 import Projpic from "../../assets/parallax/project.webp";
-import babypic from "../../assets/parallax/baby.png";
+import quote from "../../assets/quote.png";
 import squarepic from "../../assets/parallax/square.png";
 import earthpic from "../../assets/parallax/earth.png";
 import plantpic from "../../assets/parallax/plant.png";
 import pspic from "../../assets/parallax/ps.png";
 import Rellax from "rellax";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import Grid from "./grid";
 
 const mainVariants = {
   hidden: {
@@ -18,6 +19,17 @@ const mainVariants = {
       duration: 1.5,
     },
   },
+  quotehidden: {
+    opacity: 0,
+    x: 300,
+  },
+  quotevisible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring",
+    },
+  },
 };
 
 const Projectmain = () => {
@@ -26,10 +38,13 @@ const Projectmain = () => {
   const earthRef = useRef();
   const plantRef = useRef();
   const psRef = useRef();
+  const quoteRef = useRef();
+  const quoteControl = useAnimation();
+  const [layoutpos, setLayoutpos] = useState(0);
 
   useLayoutEffect(() => {
     new Rellax(headRef.current, {
-      speed: -10,
+      speed: -6,
       center: false,
       wrapper: null,
       round: true,
@@ -68,6 +83,20 @@ const Projectmain = () => {
       vertical: true,
       horizontal: false,
     });
+
+    const handleScroll = () => {
+      const position = window.pageYOffset;
+      setLayoutpos(position);
+      if (position > quoteRef.current.offsetTop - 350) {
+        quoteControl.start("quotevisible");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
@@ -100,6 +129,8 @@ const Projectmain = () => {
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             border: "18px solid #e0e0e0",
+            boxShadow:
+              "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset",
           }}
         ></div>
         <div
@@ -139,6 +170,17 @@ const Projectmain = () => {
         >
           <img src={pspic} />
         </div>
+      </section>
+      <motion.section
+        ref={quoteRef}
+        variants={mainVariants}
+        initial="quotehidden"
+        animate={quoteControl}
+      >
+        <img src={quote} className="m-auto mb-4" />
+      </motion.section>
+      <section className="grid_container mt-28">
+        <Grid layoutpos={layoutpos} />
       </section>
     </motion.div>
   );
