@@ -87,7 +87,7 @@ const Projectmain = () => {
     const handleScroll = () => {
       const position = window.pageYOffset;
       setLayoutpos(position);
-      if (position > quoteRef.current.offsetTop - 350) {
+      if (position > quoteRef.current.offsetTop - 300) {
         quoteControl.start("quotevisible");
       }
     };

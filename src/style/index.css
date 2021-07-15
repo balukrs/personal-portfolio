@@ -115,7 +115,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-auto-rows: max-content;
     padding: 20px;
-    grid-gap: 50px;
+    grid-gap: 40px;
   }
   .card {
     transition: all 0.5s ease;
@@ -124,7 +124,7 @@
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.18);
   }
   .card:hover {
-    transform: scale(1.15);
+    transform: scale(1.07);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
   }
   .img_container {
