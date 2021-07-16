@@ -14,6 +14,8 @@ import firebase_logo from "../../assets/logos/firebase.png";
 import mongo_logo from "../../assets/logos/mongo.png";
 import sass_logo from "../../assets/logos/sass.png";
 import node_logo from "../../assets/logos/node.png";
+import socket_logo from "../../assets/logos/socketio.png";
+import framer_logo from "../../assets/logos/framer.png";
 
 const Grid = ({ layoutpos }) => {
   const mainheadref = useRef();
@@ -94,7 +96,7 @@ const Grid = ({ layoutpos }) => {
         initial="gridhidden"
         animate={maingridanime}
       >
-        <div className="card">
+        <div className="relative card">
           <div className="img_container">
             <img
               src={todo_face}
@@ -103,21 +105,25 @@ const Grid = ({ layoutpos }) => {
               }}
             />
           </div>
-          <div className="relative details">
+          <div className=" details">
             <h3 className="text-xl font-bold">To Do App</h3>
             <div className="relative flex mb-1">
               <img src={firebase_logo} className="object-cover w-5/12" />
               <img src={sass_logo} className="object-cover w-5/12" />
             </div>
             <p className="mb-10">
-              arGraph is a generic parallel graph library. It is comparable with
-              Boost Graph Library (BGL). Like the BGL it uses C++ templates and
-              the visitor concept to generically implement graph algorithms.
+              A simple react JS application to keep track of your activities.
+              <span className="font-bold "> Firebase</span> is implemented for
+              authentication purpose and for storing data making use of its
+              <span className="font-bold "> Realtime Database</span>. The
+              components are styled using{" "}
+              <span className="font-bold "> SASS</span> and Material-UI. Dark
+              mode is also added.
             </p>
-            <Btnnav />
           </div>
+          <Btnnav />
         </div>
-        <div className="card">
+        <div className="relative card">
           <div className="img_container">
             <img
               src={streamer_face}
@@ -126,8 +132,39 @@ const Grid = ({ layoutpos }) => {
               }}
             />
           </div>
-          <div className="relative details">
+          <div
+            className="overflow-hidden  details"
+            style={{
+              maxHeight: "300px",
+            }}
+          >
             <h3 className="text-xl font-bold">Streamer App</h3>
+            <div className="relative flex mb-1">
+              <img src={node_logo} className="object-cover w-5/12" />
+              <img src={mongo_logo} className="object-cover w-5/12" />
+            </div>
+            <p className="mb-10">
+              A simple react JS application that portrays the functions of a
+              streaming app where you can edit,delete and create streams. The
+              elements are styled using Tailwind CSS and Material-UI. Redux is
+              implemented for state management. The server is created using
+              express JS and mongoose is used for object mapping between the
+              server and mongoDB Atlas database.
+            </p>
+          </div>
+          <Btnnav />
+        </div>
+        <div className="relative card">
+          <div className="img_container">
+            <img
+              src={social_face}
+              style={{
+                borderRadius: "5px 5px 0 0",
+              }}
+            />
+          </div>
+          <div className=" details">
+            <h3 className="text-xl font-bold">Social Media App</h3>
             <div className="relative flex mb-1">
               <img src={node_logo} className="object-cover w-5/12" />
               <img src={mongo_logo} className="object-cover w-5/12" />
@@ -137,29 +174,10 @@ const Grid = ({ layoutpos }) => {
               Boost Graph Library (BGL). Like the BGL it uses C++ templates and
               the visitor concept to generically implement graph algorithms.
             </p>
-            <Btnnav />
           </div>
+          <Btnnav />
         </div>
-        <div className="card">
-          <div className="img_container">
-            <img
-              src={social_face}
-              style={{
-                borderRadius: "5px 5px 0 0",
-              }}
-            />
-          </div>
-          <div className="relative details">
-            <h3>Heading 3</h3>
-            <p className="mb-10">
-              arGraph is a generic parallel graph library. It is comparable with
-              Boost Graph Library (BGL). Like the BGL it uses C++ templates and
-              the visitor concept to generically implement graph algorithms.
-            </p>
-            <Btnnav />
-          </div>
-        </div>
-        <div className="card">
+        <div className="relative card">
           <div className="img_container">
             <img
               src={chat_face}
@@ -168,17 +186,21 @@ const Grid = ({ layoutpos }) => {
               }}
             />
           </div>
-          <div className="relative details">
-            <h3>Heading 4</h3>
+          <div className=" details">
+            <h3 className="text-xl font-bold">Chat App</h3>
+            <div className="relative flex mb-1">
+              <img src={node_logo} className="object-cover w-5/12" />
+              <img src={socket_logo} className="object-cover w-5/12" />
+            </div>
             <p className="mb-10">
               arGraph is a generic parallel graph library. It is comparable with
               Boost Graph Library (BGL). Like the BGL it uses C++ templates and
               the visitor concept to generically implement graph algorithms.
             </p>
-            <Btnnav />
           </div>
+          <Btnnav />
         </div>
-        <div className="card">
+        <div className="relative card">
           <div className="img_container">
             <img
               src={exercise_face}
@@ -187,17 +209,21 @@ const Grid = ({ layoutpos }) => {
               }}
             />
           </div>
-          <div className="relative details">
-            <h3>Heading 5</h3>
+          <div className=" details">
+            <h3 className="text-xl font-bold">Exercise Tracker App</h3>
+            <div className="relative flex mb-1">
+              <img src={node_logo} className="object-cover w-5/12" />
+              <img src={mongo_logo} className="object-cover w-5/12" />
+            </div>
             <p className="mb-10">
               arGraph is a generic parallel graph library. It is comparable with
               Boost Graph Library (BGL). Like the BGL it uses C++ templates and
               the visitor concept to generically implement graph algorithms.
             </p>
-            <Btnnav />
           </div>
+          <Btnnav />
         </div>
-        <div className="card">
+        <div className="relative card">
           <div className="img_container">
             <img
               src={portfolio_face}
@@ -206,15 +232,18 @@ const Grid = ({ layoutpos }) => {
               }}
             />
           </div>
-          <div className="relative details">
-            <h3>Heading 6</h3>
+          <div className=" details">
+            <h3 className="text-xl font-bold">Personal Portfolio</h3>
+            <div className="relative flex mb-1">
+              <img src={framer_logo} className="object-cover w-5/12" />
+            </div>
             <p className="mb-10">
               arGraph is a generic parallel graph library. It is comparable with
               Boost Graph Library (BGL). Like the BGL it uses C++ templates and
               the visitor concept to generically implement graph algorithms.
             </p>
-            <Btnnav />
           </div>
+          <Btnnav />
         </div>
       </motion.div>
     </>
