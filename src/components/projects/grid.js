@@ -9,6 +9,9 @@ import social_face from "../../assets/projects/social_app/front.webp";
 import chat_face from "../../assets/projects/chat_app/front.webp";
 import exercise_face from "../../assets/projects/exercise_app/front.webp";
 import portfolio_face from "../../assets/projects/portfolio_app/front.webp";
+import movie_face from "../../assets/projects/vanillajs_projects/movie.webp";
+import budget_face from "../../assets/projects/vanillajs_projects/budget.webp";
+import reminder_face from "../../assets/projects/vanillajs_projects/reminder.webp";
 
 import firebase_logo from "../../assets/logos/firebase.png";
 import mongo_logo from "../../assets/logos/mongo.png";
@@ -19,10 +22,14 @@ import framer_logo from "../../assets/logos/framer.png";
 
 const Grid = ({ layoutpos }) => {
   const mainheadref = useRef();
+  const secondheadref = useRef();
   const maingridref = useRef();
+  const secondgridref = useRef();
 
   const mainheadanime = useAnimation();
+  const secondheadanime = useAnimation();
   const maingridanime = useAnimation();
+  const secondgridanime = useAnimation();
 
   const mainVariants = {
     gridhidden: {
@@ -93,10 +100,17 @@ const Grid = ({ layoutpos }) => {
     await mainheadanime.start("headvisible");
     await maingridanime.start("gridvisible");
   };
+  const animeOrch2 = async () => {
+    await secondheadanime.start("headvisible");
+    await secondgridanime.start("gridvisible");
+  };
 
   useLayoutEffect(() => {
     if (layoutpos > mainheadref.current.offsetTop - 550) {
       animeOrch1();
+    }
+    if (layoutpos > secondheadref.current.offsetTop - 550) {
+      animeOrch2();
     }
   }, [layoutpos]);
 
@@ -270,6 +284,89 @@ const Grid = ({ layoutpos }) => {
           <Btnnav />
         </div>
       </motion.div>
+      <motion.h1
+        className="inline-block p-2 mt-10 ml-6 text-4xl border-4 border-black"
+        ref={secondheadref}
+        variants={mainVariants}
+        initial="headhidden"
+        animate={secondheadanime}
+      >
+        Vanilla JS Projects
+      </motion.h1>
+      <motion.div
+        className="mb-20 cards"
+        ref={secondgridref}
+        variants={mainVariants}
+        initial="gridhidden"
+        animate={secondgridanime}
+      >
+        <div className="relative card">
+          <div className="img_container">
+            <img
+              src={movie_face}
+              style={{
+                borderRadius: "5px 5px 0 0",
+              }}
+            />
+          </div>
+          <div className=" details">
+            <h3 className="text-xl font-bold">Movie Finder App</h3>
+            <ReadMore>
+              A website here you can search for movies and provide your ratings.
+              The web app is made using Vanilla JavaScript with HTML and CSS.
+              The app make use of the movie api OMDb API:The Open Movie
+              Database. Local Storage is implemented where you can store the
+              list of your avourite movies along with your own user defined
+              ratings.
+            </ReadMore>
+          </div>
+          <Btnnav />
+        </div>
+        <div className="relative card">
+          <div className="img_container">
+            <img
+              src={reminder_face}
+              style={{
+                borderRadius: "5px 5px 0 0",
+              }}
+            />
+          </div>
+          <div className=" details">
+            <h3 className="text-xl font-bold">CLOCK_REMINDER App</h3>
+            <ReadMore>
+              An advanced clock with the ability to add reminders and to create
+              and edit ToDo's. Its also shows local weather based on user
+              location. The web app is made using pure vanilla JS with HTML and
+              CSS. The web app gives the user ability to add reminders and save
+              ToDo's. The application is alerting the user with a built in alarm
+              function. Local storage is implmented on the browser.
+            </ReadMore>
+          </div>
+          <Btnnav />
+        </div>
+        <div className="relative card">
+          <div className="img_container">
+            <img
+              src={budget_face}
+              style={{
+                borderRadius: "5px 5px 0 0",
+              }}
+            />
+          </div>
+          <div className=" details">
+            <h3 className="text-xl font-bold">Daily Budget Tracker</h3>
+            <ReadMore>
+              The app is made for tracking daily budget activities. Its pretty
+              easy to use and self-explanatory. Users can add daily expenses and
+              even keep notes about daily income-expense activities. This web
+              app is made using pure Vanilla JavaScript with HTML and CSS. Local
+              browser storage is implemented in the app.
+            </ReadMore>
+          </div>
+          <Btnnav />
+        </div>
+      </motion.div>
+      <div className="h-4"></div>
     </>
   );
 };

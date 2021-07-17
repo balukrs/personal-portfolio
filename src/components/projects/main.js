@@ -5,6 +5,7 @@ import squarepic from "../../assets/parallax/square.png";
 import earthpic from "../../assets/parallax/earth.png";
 import plantpic from "../../assets/parallax/plant.png";
 import pspic from "../../assets/parallax/ps.png";
+import scrollpic from "../../assets/scroll.png";
 import Rellax from "rellax";
 import { motion, useAnimation } from "framer-motion";
 import Grid from "./grid";
@@ -171,7 +172,18 @@ const Projectmain = () => {
           <img src={pspic} />
         </div>
       </section>
+      <section className="flex flex-col items-center justify-center w-full">
+        <img
+          src={scrollpic}
+          className="object-cover mb-2"
+          style={{
+            width: "35px",
+          }}
+        />
+        <span className="font-extrabold ">Scroll Down</span>
+      </section>
       <motion.section
+        className="transform translate-y-18"
         ref={quoteRef}
         variants={mainVariants}
         initial="quotehidden"
