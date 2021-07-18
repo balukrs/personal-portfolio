@@ -54,7 +54,7 @@ const Projectmain = () => {
     });
     new Rellax(squareRef.current, {
       speed: 3,
-      center: false,
+      center: true,
       wrapper: null,
       round: true,
       vertical: true,
@@ -93,7 +93,7 @@ const Projectmain = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -113,15 +113,16 @@ const Projectmain = () => {
           height: "200vh",
         }}
       >
-        <div
-          className="absolute z-10 left-1/2 overlay__normal"
+        <h1
+          className="absolute z-10 left-1/2 overlay__normal prj__icon"
           style={{
             transform: "translate(-50%, 20%)",
           }}
           ref={headRef}
         >
-          <motion.h1 className=" prj__icon">PROJECTS.</motion.h1>
-        </div>
+          PROJECTS.
+        </h1>
+
         <div
           className="flex w-2/4 m-auto bg-cover rounded-sm h-4/5"
           style={{

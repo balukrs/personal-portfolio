@@ -62,7 +62,7 @@ const Content = () => {
         variants={testVariable}
         initial="hidden"
         animate={Control}
-        className="inline-block w-9/12 mt-2 bg-fixed rounded-r-lg h-5/6 animate-mymove backgroundEffect"
+        className="inline-block w-9/12 mt-2 bg-fixed rounded-r-lg h-5/6 animate-mymove backgroundEffect md:hidden"
         style={{
           backgroundImage: `url(${defimg})`,
         }}
@@ -72,7 +72,7 @@ const Content = () => {
         variants={testVariable}
         initial="hidden"
         animate="visible"
-        className="w-1/3 mt-2 ml-2 mr-2 overflow-hidden p-7 h-5/6 frostedcont"
+        className="w-1/3 mt-2 ml-2 mr-2 overflow-hidden p-7 h-5/6 frostedcont md:w-full"
       >
         <div className="flex flex-col items-center content-center ">
           <div className="flex justify-center">

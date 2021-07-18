@@ -119,7 +119,7 @@ const Loader = ({ trigger }) => {
           initial="hidden"
           animate={img_1Control}
           exit="exitup"
-          className="w-1/3 mr-2 h-4/5"
+          className="w-1/3 mr-2  h-4/5"
           style={{
             backgroundImage: `url(${img1})`,
             backgroundSize: "cover",
@@ -181,7 +181,9 @@ const Loader = ({ trigger }) => {
           animate={messageControl}
           exit="messagehidden"
         >
-          <h1>Welcome to my portfolio website. </h1>
+          <h1 className="z-10 text-gray-500">
+            Welcome to my portfolio website
+          </h1>
         </motion.div>
       </div>
     </>

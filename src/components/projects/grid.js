@@ -61,9 +61,9 @@ const Grid = ({ layoutpos }) => {
     };
     return (
       <p>
-        {isReadMore ? text.slice(0, 210) : text}
+        {isReadMore ? text.slice(0, 200) : text}
         <span onClick={toggleReadMore} className="text-gray-300 cursor-pointer">
-          {isReadMore ? "...read more" : " show less"}
+          {isReadMore ? "..read more" : " show less"}
         </span>
       </p>
     );
@@ -96,13 +96,13 @@ const Grid = ({ layoutpos }) => {
     );
   };
 
-  const animeOrch1 = async () => {
-    await mainheadanime.start("headvisible");
-    await maingridanime.start("gridvisible");
+  const animeOrch1 = () => {
+    mainheadanime.start("headvisible");
+    maingridanime.start("gridvisible");
   };
-  const animeOrch2 = async () => {
-    await secondheadanime.start("headvisible");
-    await secondgridanime.start("gridvisible");
+  const animeOrch2 = () => {
+    secondheadanime.start("headvisible");
+    secondgridanime.start("gridvisible");
   };
 
   useLayoutEffect(() => {
@@ -225,12 +225,12 @@ const Grid = ({ layoutpos }) => {
               <img src={socket_logo} className="object-cover w-5/12" />
             </div>
             <ReadMore>
-              A chat application created with express JS and Socket IO. Users
-              can enter the chat room with an unique username thus enabling
-              realtime, bi-directional communication between web clients and
-              servers. A new browser window needs to be open to establish a
-              connection and add a new user. The user can leave or disconnect
-              from the chat room by closing the browser window.
+              A chat app created with express JS and Socket IO. Users can enter
+              the chat room with an unique username thus enabling realtime,
+              bi-directional communication between web clients and servers. A
+              new browser window needs to be open to establish a connection and
+              add a new user. The user can leave or disconnect from the chat
+              room by closing the browser window.
             </ReadMore>
           </div>
           <Btnnav stats={true} />
