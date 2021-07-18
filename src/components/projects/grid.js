@@ -69,7 +69,7 @@ const Grid = ({ layoutpos }) => {
     );
   };
 
-  const Btnnav = ({ stats }) => {
+  const Btnnav = ({ stats, clntref, servref, webref }) => {
     return (
       <>
         <div
@@ -78,17 +78,29 @@ const Grid = ({ layoutpos }) => {
             borderRadius: "0 0 5px 5px",
           }}
         >
-          <a className="flex items-center justify-center cursor-pointer hover:text-red-500">
+          <a
+            className="flex items-center justify-center cursor-pointer hover:text-red-500"
+            href={clntref}
+            target="_blank"
+          >
             <AiFillGithub size="2em" />
             <p className="text-sm ">Code</p>
           </a>
           {stats == true ? (
-            <a className="flex items-center justify-center cursor-pointer hover:text-red-500">
+            <a
+              className="flex items-center justify-center cursor-pointer hover:text-red-500"
+              href={servref}
+              target="_blank"
+            >
               <AiFillGithub size="2em" />
               <p className="text-sm ">Server</p>
             </a>
           ) : null}
-          <a className="cursor-pointer hover:text-red-500">
+          <a
+            className="cursor-pointer hover:text-red-500"
+            href={webref}
+            target="_blank"
+          >
             <RiPagesLine size="2em" />
           </a>
         </div>
@@ -155,7 +167,10 @@ const Grid = ({ layoutpos }) => {
               SASS and Material-UI. Dark mode is also added.
             </ReadMore>
           </div>
-          <Btnnav />
+          <Btnnav
+            clntref="https://github.com/balukrs/todo-project-firebase.git"
+            webref="https://master.d1xk6qsqrlgrmk.amplifyapp.com/"
+          />
         </div>
         <div className="relative card">
           <div className="img_container">
@@ -181,7 +196,12 @@ const Grid = ({ layoutpos }) => {
               server and mongoDB Atlas database.
             </ReadMore>
           </div>
-          <Btnnav stats={true} />
+          <Btnnav
+            stats={true}
+            servref="https://github.com/balukrs/StreamerApp_Server.git"
+            clntref="https://github.com/balukrs/StreamerApp_client.git"
+            webref="https://master.d2ghrc4ye8d0e4.amplifyapp.com/"
+          />
         </div>
         <div className="relative card">
           <div className="img_container">
@@ -207,7 +227,12 @@ const Grid = ({ layoutpos }) => {
               to hash the passwords stored in database.
             </ReadMore>
           </div>
-          <Btnnav stats={true} />
+          <Btnnav
+            stats={true}
+            clntref="https://github.com/balukrs/social-client-facebookclone.git"
+            servref="https://github.com/balukrs/social-server-facebookclone.git"
+            webref="https://master.d3bu302d9gqem5.amplifyapp.com/"
+          />
         </div>
         <div className="relative card">
           <div className="img_container">
@@ -233,7 +258,12 @@ const Grid = ({ layoutpos }) => {
               room by closing the browser window.
             </ReadMore>
           </div>
-          <Btnnav stats={true} />
+          <Btnnav
+            stats={true}
+            servref="https://github.com/balukrs/socket-io-server-chatApp.git"
+            clntref="https://github.com/balukrs/socket-io-client-chatApp.git"
+            webref="https://master.d1kd7pgm0rmtuf.amplifyapp.com/"
+          />
         </div>
         <div className="relative card">
           <div className="img_container">
@@ -258,7 +288,12 @@ const Grid = ({ layoutpos }) => {
               exercise logs.
             </ReadMore>
           </div>
-          <Btnnav stats={true} />
+          <Btnnav
+            stats={true}
+            servref="https://github.com/balukrs/Exercise-Tracker-Application-Backend.git"
+            clntref="https://github.com/balukrs/Exercise-Tracker-Application-Frontend.git"
+            webref="https://master.d2guzofgp22gfa.amplifyapp.com/"
+          />
         </div>
         <div className="relative card">
           <div className="img_container">
@@ -281,7 +316,7 @@ const Grid = ({ layoutpos }) => {
               includes many of my personal projects that i did to learn react.
             </ReadMore>
           </div>
-          <Btnnav />
+          <Btnnav clntref="https://github.com/balukrs/personal-portfolio.git" />
         </div>
       </motion.div>
       <motion.h1
@@ -320,7 +355,10 @@ const Grid = ({ layoutpos }) => {
               ratings.
             </ReadMore>
           </div>
-          <Btnnav />
+          <Btnnav
+            clntref="https://github.com/balukrs/MOVIE_FINDER.git"
+            webref="https://balu-movie-finder.netlify.app"
+          />
         </div>
         <div className="relative card">
           <div className="img_container">
@@ -342,7 +380,10 @@ const Grid = ({ layoutpos }) => {
               function. Local storage is implmented on the browser.
             </ReadMore>
           </div>
-          <Btnnav />
+          <Btnnav
+            webref="https://balu-advance-clock.netlify.app"
+            clntref="https://github.com/balukrs/CLOCK_REMINDER_TODO-.git"
+          />
         </div>
         <div className="relative card">
           <div className="img_container">
@@ -363,7 +404,10 @@ const Grid = ({ layoutpos }) => {
               browser storage is implemented in the app.
             </ReadMore>
           </div>
-          <Btnnav />
+          <Btnnav
+            webref="https://balu-dailybudget-tracker.netlify.app"
+            clntref="https://github.com/balukrs/Daily-Budget-Tracker.git"
+          />
         </div>
       </motion.div>
       <div className="h-4"></div>

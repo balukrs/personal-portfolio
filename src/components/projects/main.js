@@ -114,7 +114,7 @@ const Projectmain = () => {
         }}
       >
         <h1
-          className="absolute z-10 left-1/2 overlay__normal prj__icon"
+          className="absolute z-10 left-1/2 overlay__normal prj__icon md:text-6xl"
           style={{
             transform: "translate(-50%, 20%)",
           }}
@@ -155,7 +155,7 @@ const Projectmain = () => {
           <img src={earthpic} />
         </div>
         <div
-          className="absolute w-2/6 left-32 bottom-96 h-1/6"
+          className="absolute w-2/6 left-32 bottom-96 h-1/6 md:left-10"
           style={{
             zIndex: "-1",
           }}
@@ -164,7 +164,7 @@ const Projectmain = () => {
           <img src={plantpic} />
         </div>
         <div
-          className="absolute w-2/4 -right-56 bottom-96 h-1/6"
+          className="absolute w-2/4 -right-56 bottom-96 h-1/6 md:right-24"
           style={{
             zIndex: "1",
           }}

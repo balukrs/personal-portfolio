@@ -8,7 +8,7 @@ const Navbar = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    if (pathname == "/projects") {
+    if (pathname === "/projects") {
       document.body.style.overflowY = "visible";
       document.body.style.overflowX = "hidden";
     } else {

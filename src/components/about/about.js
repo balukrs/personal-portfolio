@@ -212,7 +212,7 @@ const About = () => {
         </div>
       </div>
       <motion.div
-        className="absolute z-10 w-1/3 h-auto p-2 m-auto text-lg bg-white bg-opacity-50 border rounded top-20 right-20 handwritting-font blur-2xl md:left-0 md:right-0 md:p-10 md:w-8/12 md:bg-opacity-90 md:text-base"
+        className="absolute z-10 w-1/3 h-auto p-2 m-auto text-lg bg-white border rounded bg-opacity-80 top-20 right-20 handwritting-font blur-2xl md:left-0 md:right-0 md:p-10 md:w-8/12 md:bg-opacity-90 md:text-base"
         variants={contVariants}
         initial="abouthide"
         animate={controls}
