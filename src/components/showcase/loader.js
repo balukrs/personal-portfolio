@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import IMG1 from "../../assets/loader/img_1.webp";
-import IMG3 from "../../assets/loader/img_3.webp";
-import IMG4 from "../../assets/loader/img_4.webp";
-import IMG2 from "../../assets/loader/img_2.webp";
-import IMG1_COLOR from "../../assets/loader/img_1_color.webp";
-import IMG3_COLOR from "../../assets/loader/img_3_color.webp";
-import IMG4_COLOR from "../../assets/loader/img_4_color.webp";
-import IMG2_COLOR from "../../assets/loader/img_2_color.webp";
+import IMG1 from "../../assets/loader/img_1.png";
+import IMG3 from "../../assets/loader/img_3.png";
+import IMG4 from "../../assets/loader/img_4.png";
+import IMG2 from "../../assets/loader/img_2.png";
+import IMG1_COLOR from "../../assets/loader/img_1_color.png";
+import IMG3_COLOR from "../../assets/loader/img_3_color.png";
+import IMG4_COLOR from "../../assets/loader/img_4_color.png";
+import IMG2_COLOR from "../../assets/loader/img_2_color.png";
 import { motion, useAnimation } from "framer-motion";
 
 const testVariable = {
@@ -119,7 +119,7 @@ const Loader = ({ trigger }) => {
           initial="hidden"
           animate={img_1Control}
           exit="exitup"
-          className="w-1/3 mr-2  h-4/5"
+          className="w-1/3 mr-2 h-4/5"
           style={{
             backgroundImage: `url(${img1})`,
             backgroundSize: "cover",

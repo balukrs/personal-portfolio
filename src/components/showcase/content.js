@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
-import homeimage from "../../assets/loader/img_4.webp";
-import aboutimage from "../../assets/loader/img_1.webp";
-import projectimage from "../../assets/loader/img_2.webp";
-import contactimage from "../../assets/loader/img_3.webp";
+import homeimage from "../../assets/loader/img_4.png";
+import aboutimage from "../../assets/loader/img_1.png";
+import projectimage from "../../assets/loader/img_2.png";
+import contactimage from "../../assets/loader/img_3.png";
 import Me from "../../assets/me.webp";
 import { GrLinkedin } from "react-icons/gr";
 import { motion, useAnimation } from "framer-motion";
