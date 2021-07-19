@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
-import homeimage from "../../assets/loader/img_4.png";
-import aboutimage from "../../assets/loader/img_1.png";
-import projectimage from "../../assets/loader/img_2.png";
-import contactimage from "../../assets/loader/img_3.png";
+import homeimage from "../../assets/loader/img_4.webp";
+import aboutimage from "../../assets/loader/img_1.webp";
+import projectimage from "../../assets/loader/img_2.webp";
+import contactimage from "../../assets/loader/img_3.webp";
 import Me from "../../assets/me.webp";
 import { GrLinkedin } from "react-icons/gr";
 import { motion, useAnimation } from "framer-motion";
@@ -21,7 +21,8 @@ const testVariable = {
     },
   },
   extravisible: {
-    opacity: [0, 1],
+    scale: [0.9, 1],
+    x: [-10, 0],
     transition: {
       type: "ease",
       duration: 0.5,
@@ -62,9 +63,11 @@ const Content = () => {
         variants={testVariable}
         initial="hidden"
         animate={Control}
-        className="inline-block w-9/12 mt-2 bg-fixed rounded-r-lg h-5/6 animate-mymove backgroundEffect md:hidden"
+        className="inline-block w-6/12 mt-2 bg-fixed rounded-lg h-5/6 backgroundEffect md:hidden"
         style={{
           backgroundImage: `url(${defimg})`,
+          boxShadow:
+            "rgba(13, 13, 13, 0.4) -5px 5px, rgba(38, 38, 38, 0.3) -10px 10px, rgba(89, 89, 89, 0.2) -15px 15px, rgba(166, 166, 166, 0.1) -20px 20px, rgba(212, 212, 212, 0.05) -25px 25px",
         }}
       ></motion.section>
 

@@ -42,21 +42,9 @@ module.exports = {
             transform: "scale3d(1, 1, 1)",
           },
         },
-        mymove: {
-          "0%": {
-            opacity: 0,
-          },
-          "50%": {
-            opacity: 0.5,
-          },
-          "100%": {
-            opacity: 1,
-          },
-        },
       },
       animation: {
         rubber: "rubber 1s",
-        mymove: "mymove 0.5s ease",
       },
     },
   },
