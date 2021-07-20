@@ -42,9 +42,15 @@ module.exports = {
             transform: "scale3d(1, 1, 1)",
           },
         },
+        rotater: {
+          "100%": {
+            transform: "rotate(-360deg)",
+          },
+        },
       },
       animation: {
         rubber: "rubber 1s",
+        rotater: "rotater 2s infinite linear",
       },
     },
   },
