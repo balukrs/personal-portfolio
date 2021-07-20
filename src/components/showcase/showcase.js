@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Content from "./content";
 import Loader from "./loader";
 import { motion, AnimatePresence } from "framer-motion";
+import { Context } from "../../context";
 
 const contVariants = {
   hidden: {
@@ -24,6 +25,15 @@ const contVariants = {
 const Showcase = () => {
   const [init, setInit] = useState(true);
   const [final, setFinal] = useState(false);
+  // eslint-disable-next-line
+  const [state, dispatch] = useContext(Context);
+
+  useEffect(() => {
+    if (final === true) {
+      dispatch({ type: "UPDATE_TRIGGER", payload: true });
+    }
+    // eslint-disable-next-line
+  }, [final]);
 
   return (
     <motion.div

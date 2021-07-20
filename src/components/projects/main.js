@@ -98,6 +98,7 @@ const Projectmain = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -142,7 +143,7 @@ const Projectmain = () => {
           }}
           ref={squareRef}
         >
-          <img src={squarepic} />
+          <img src={squarepic} alt="img" />
         </div>
         <div
           className="absolute w-3/12 top-96 right-36 opacity-90 h-1/6"
@@ -152,7 +153,7 @@ const Projectmain = () => {
           }}
           ref={earthRef}
         >
-          <img src={earthpic} />
+          <img src={earthpic} alt="img" />
         </div>
         <div
           className="absolute w-2/6 left-32 bottom-96 h-1/6 md:left-10"
@@ -161,7 +162,7 @@ const Projectmain = () => {
           }}
           ref={plantRef}
         >
-          <img src={plantpic} />
+          <img src={plantpic} alt="img" />
         </div>
         <div
           className="absolute w-2/4 -right-56 bottom-96 h-1/6 md:right-24"
@@ -170,7 +171,7 @@ const Projectmain = () => {
           }}
           ref={psRef}
         >
-          <img src={pspic} />
+          <img src={pspic} alt="img" />
         </div>
       </section>
       <section className="flex flex-col items-center justify-center w-full">
@@ -180,6 +181,7 @@ const Projectmain = () => {
           style={{
             width: "35px",
           }}
+          alt="img"
         />
         <span className="font-extrabold ">Scroll Down</span>
       </section>
@@ -190,7 +192,7 @@ const Projectmain = () => {
         initial="quotehidden"
         animate={quoteControl}
       >
-        <img src={quote} className="m-auto mb-4" />
+        <img src={quote} className="m-auto mb-4" alt="img" />
       </motion.section>
       <section className="grid_container mt-28">
         <Grid layoutpos={layoutpos} />

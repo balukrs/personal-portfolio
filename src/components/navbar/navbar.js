@@ -14,13 +14,26 @@ const Navbar = () => {
     } else {
       document.body.style.overflow = "hidden";
     }
-  }, [pathname]);
+    if (pathname !== "/") {
+      dispatch({ type: "UPDATE_TRIGGER", payload: true });
+    }
+    if (pathname === "/") {
+      dispatch({ type: "UPDATE_TRIGGER", payload: false });
+    }
+
+    window.scrollTo(0, 0);
+  }, [pathname, dispatch]);
 
   const disPatcher = (val) => {
     dispatch({ type: "UPDATE_LOC", payload: val });
   };
+
   return (
-    <div className="sticky top-0 z-50 w-full p-2 bg-white">
+    <div
+      className={`sticky top-0 z-50 w-full p-2 m-auto overflow-hidden bg-white ${
+        state.triggervalue ? "" : "hidden"
+      }`}
+    >
       <ul className="flex content-center justify-center p-3 custom__navbar">
         <li
           className={`under__effect ${pathname === "/" ? "under__lock" : ""}`}

@@ -82,15 +82,17 @@ const Grid = ({ layoutpos }) => {
             className="flex items-center justify-center cursor-pointer hover:text-red-500"
             href={clntref}
             target="_blank"
+            rel="noreferrer"
           >
             <AiFillGithub size="2em" />
             <p className="text-sm ">Code</p>
           </a>
-          {stats == true ? (
+          {stats === true ? (
             <a
               className="flex items-center justify-center cursor-pointer hover:text-red-500"
               href={servref}
               target="_blank"
+              rel="noreferrer"
             >
               <AiFillGithub size="2em" />
               <p className="text-sm ">Server</p>
@@ -100,6 +102,7 @@ const Grid = ({ layoutpos }) => {
             className="cursor-pointer hover:text-red-500"
             href={webref}
             target="_blank"
+            rel="noreferrer"
           >
             <RiPagesLine size="2em" />
           </a>
@@ -124,6 +127,7 @@ const Grid = ({ layoutpos }) => {
     if (layoutpos > secondheadref.current.offsetTop - 550) {
       animeOrch2();
     }
+    // eslint-disable-next-line
   }, [layoutpos]);
 
   return (
@@ -151,13 +155,18 @@ const Grid = ({ layoutpos }) => {
               style={{
                 borderRadius: "5px 5px 0 0",
               }}
+              alt="img"
             />
           </div>
           <div className=" details">
             <h3 className="text-xl font-bold ">To Do App</h3>
             <div className="relative flex mb-1">
-              <img src={firebase_logo} className="object-cover w-5/12" />
-              <img src={sass_logo} className="object-cover w-5/12" />
+              <img
+                src={firebase_logo}
+                className="object-cover w-5/12"
+                alt="img"
+              />
+              <img src={sass_logo} className="object-cover w-5/12" alt="img" />
             </div>
             <ReadMore>
               A simple react JS application to keep track of your activities.
@@ -179,13 +188,14 @@ const Grid = ({ layoutpos }) => {
               style={{
                 borderRadius: "5px 5px 0 0",
               }}
+              alt="img"
             />
           </div>
           <div className="h-auto details">
             <h3 className="text-xl font-bold">Streamer App</h3>
             <div className="relative flex mb-1">
-              <img src={node_logo} className="object-cover w-5/12" />
-              <img src={mongo_logo} className="object-cover w-5/12" />
+              <img src={node_logo} className="object-cover w-5/12" alt="img" />
+              <img src={mongo_logo} className="object-cover w-5/12" alt="img" />
             </div>
             <ReadMore>
               A simple react JS application that portrays the functions of a
@@ -210,13 +220,14 @@ const Grid = ({ layoutpos }) => {
               style={{
                 borderRadius: "5px 5px 0 0",
               }}
+              alt="img"
             />
           </div>
           <div className=" details">
             <h3 className="text-xl font-bold">Social Media App</h3>
             <div className="relative flex mb-1">
-              <img src={node_logo} className="object-cover w-5/12" />
-              <img src={mongo_logo} className="object-cover w-5/12" />
+              <img src={node_logo} className="object-cover w-5/12" alt="img" />
+              <img src={mongo_logo} className="object-cover w-5/12" alt="img" />
             </div>
             <ReadMore>
               A simple facebook clone where users can create account to post
@@ -241,13 +252,18 @@ const Grid = ({ layoutpos }) => {
               style={{
                 borderRadius: "5px 5px 0 0",
               }}
+              alt="img"
             />
           </div>
           <div className=" details">
             <h3 className="text-xl font-bold">Chat App</h3>
             <div className="relative flex mb-1">
-              <img src={node_logo} className="object-cover w-5/12" />
-              <img src={socket_logo} className="object-cover w-5/12" />
+              <img src={node_logo} className="object-cover w-5/12" alt="img" />
+              <img
+                src={socket_logo}
+                className="object-cover w-5/12"
+                alt="img"
+              />
             </div>
             <ReadMore>
               A chat app created with express JS and Socket IO. Users can enter
@@ -272,13 +288,14 @@ const Grid = ({ layoutpos }) => {
               style={{
                 borderRadius: "5px 5px 0 0",
               }}
+              alt="img"
             />
           </div>
           <div className=" details">
             <h3 className="text-xl font-bold">Exercise Tracker App</h3>
             <div className="relative flex mb-1">
-              <img src={node_logo} className="object-cover w-5/12" />
-              <img src={mongo_logo} className="object-cover w-5/12" />
+              <img src={node_logo} className="object-cover w-5/12" alt="img" />
+              <img src={mongo_logo} className="object-cover w-5/12" alt="img" />
             </div>
             <ReadMore>
               A react app customized using Tailwind CSS for keeping track of
@@ -302,12 +319,17 @@ const Grid = ({ layoutpos }) => {
               style={{
                 borderRadius: "5px 5px 0 0",
               }}
+              alt="img"
             />
           </div>
           <div className=" details">
             <h3 className="text-xl font-bold">Personal Portfolio</h3>
             <div className="relative flex mb-1">
-              <img src={framer_logo} className="object-cover w-5/12" />
+              <img
+                src={framer_logo}
+                className="object-cover w-5/12"
+                alt="img"
+              />
             </div>
             <ReadMore>
               React is used to create my personal portfolio website. Styled with
@@ -342,6 +364,7 @@ const Grid = ({ layoutpos }) => {
               style={{
                 borderRadius: "5px 5px 0 0",
               }}
+              alt="img"
             />
           </div>
           <div className=" details">
@@ -367,6 +390,7 @@ const Grid = ({ layoutpos }) => {
               style={{
                 borderRadius: "5px 5px 0 0",
               }}
+              alt="img"
             />
           </div>
           <div className=" details">
@@ -392,6 +416,7 @@ const Grid = ({ layoutpos }) => {
               style={{
                 borderRadius: "5px 5px 0 0",
               }}
+              alt="img"
             />
           </div>
           <div className=" details">

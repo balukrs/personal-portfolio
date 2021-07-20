@@ -1,7 +1,7 @@
 import React, { createContext, useReducer } from "react";
 import { hoverReducer } from "../reducer";
 
-const initial = { hoverloc: null };
+const initial = { hoverloc: null, triggervalue: false };
 
 const Store = ({ children }) => {
   const [state, dispatch] = useReducer(hoverReducer, initial);

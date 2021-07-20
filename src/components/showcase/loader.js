@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import mountain_img from "../../assets/mountain.webp";
 import Tilt from "react-parallax-tilt";
 import { motion, useAnimation } from "framer-motion";
@@ -36,6 +36,20 @@ const testVariable = {
       duration: 1,
     },
   },
+  exitdown: {
+    y: "100vh",
+    transition: {
+      type: "tween",
+      delay: 0.7,
+      duration: 1,
+    },
+  },
+  exitup: {
+    y: "-100vh",
+    transition: {
+      type: "tween",
+    },
+  },
 };
 
 const Loader = ({ trigger }) => {
@@ -51,13 +65,9 @@ const Loader = ({ trigger }) => {
     await head3.start("appear");
   };
 
-  const sequence = async () => {
-    // trigger(false);
-  };
-
   useEffect(() => {
     initamine();
-    sequence();
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -68,13 +78,14 @@ const Loader = ({ trigger }) => {
             variants={testVariable}
             initial="bghidden"
             animate={bganime}
-            className="rounded-lg "
+            exit="exitdown"
+            className="rounded-lg"
             style={{
               backgroundImage: `url(${mountain_img})`,
-              height: "800px",
+              height: "900px",
               width: "1800px",
               backgroundSize: "cover",
-              backgroundPosition: "center 50%",
+              backgroundPosition: "center 20%",
             }}
           ></motion.div>
         </Tilt>
@@ -84,14 +95,18 @@ const Loader = ({ trigger }) => {
             transform: "translate(-50%, 0)",
           }}
         >
-          <div className="flex">
+          <motion.div
+            className="flex xmd:flex-col"
+            variants={testVariable}
+            exit="exitup"
+          >
             <motion.section
               variants={testVariable}
               initial="hidden"
               animate={head1}
             >
               <motion.h1
-                className="font-bold text-black text-9xl hover:text-gray-500 opacity-90"
+                className="font-bold text-black text-9xl hover:text-gray-500 opacity-90 md:text-6xl"
                 whileHover={{ x: -15 }}
               >
                 PORTFOLIO
@@ -103,13 +118,13 @@ const Loader = ({ trigger }) => {
               variants={testVariable}
             >
               <motion.h1
-                className="ml-10 font-bold text-green-300 text-9xl hover:text-gray-500 opacity-90"
+                className="ml-10 font-bold text-green-300 text-9xl hover:text-gray-500 opacity-90 md:text-6xl"
                 whileHover={{ x: 15 }}
               >
                 .WEBSITE
               </motion.h1>
             </motion.section>
-          </div>
+          </motion.div>
           <motion.div
             className="absolute mt-20 cursor-pointer -bottom-40"
             style={{
@@ -120,6 +135,8 @@ const Loader = ({ trigger }) => {
             initial="dissapear"
             animate={head3}
             variants={testVariable}
+            exit="exitdown"
+            onClick={() => trigger(false)}
           >
             <div className="border_rotate"></div>
           </motion.div>

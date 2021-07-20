@@ -34,7 +34,7 @@
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #000000;
+    background-color: #6ee7b7;
     transition: transform 0.25s ease-out;
   }
 
@@ -42,9 +42,9 @@
     transform: scaleX(1);
   }
   .under__lock {
-    border: 2px solid black;
+    border: 2px solid #6ee7b7;
     padding: 0px 4px;
-    box-shadow: 0 8px 6px -8px black;
+    box-shadow: 0 8px 6px -8px gray;
   }
   .under__lock:hover:after {
     transform: scaleX(0);
@@ -61,7 +61,7 @@
   }
   .about-animate {
     @apply animate-rubber;
-    color: #5e5e5e;
+    color: #6ee7b7;
   }
   .backgroundEffect {
     background-size: auto 100%;
@@ -77,7 +77,6 @@
     color: #bfbfbf;
   }
   .overlay__normal {
-    /* position: relative; */
     mix-blend-mode: difference;
   }
   .overlay__normal > * {

@@ -31,6 +31,7 @@ const testVariable = {
 };
 
 const Content = () => {
+  // eslint-disable-next-line
   const [state, dispatch] = useContext(Context);
   const [defimg, setDefimg] = useState(homeimage);
   const Control = useAnimation();
@@ -55,6 +56,7 @@ const Content = () => {
         setDefimg(homeimage);
         break;
     }
+    // eslint-disable-next-line
   }, [state]);
 
   return (
@@ -79,7 +81,7 @@ const Content = () => {
       >
         <div className="flex flex-col items-center content-center ">
           <div className="flex justify-center">
-            <img src={Me} className="w-2/5 rounded-full" />
+            <img src={Me} className="w-2/5 rounded-full" alt="img" />
           </div>
           <div className="mt-3">
             <h3 className="text-2xl font-bold">Balu Krishna R.</h3>
@@ -95,12 +97,9 @@ const Content = () => {
               balukrs@balukrishna.com
             </span>
             <span className="mb-2 font-light font-amiri">+91 9567668998</span>
-            <a
-              href="#"
-              className="mb-6 transition-all transform scale-1 hover:scale-75"
-            >
+            <button className="mb-6 transition-all transform scale-1 hover:scale-75">
               <GrLinkedin size="1.5em" />
-            </a>
+            </button>
           </div>
           <div>
             <button className="p-2 text-gray-100 transition duration-300 bg-gray-700 border-2 border-gray-700 rounded hover:bg-white hover:text-gray-900 drop-shadow-xl">
