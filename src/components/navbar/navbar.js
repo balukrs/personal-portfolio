@@ -11,6 +11,8 @@ const Navbar = () => {
     if (pathname === "/projects") {
       document.body.style.overflowY = "visible";
       document.body.style.overflowX = "hidden";
+    } else if (pathname === "/contact") {
+      document.body.style.overflow = "auto";
     } else {
       document.body.style.overflow = "hidden";
     }
@@ -75,10 +77,19 @@ const Navbar = () => {
           </Link>
         </li>
         <li
-          className="under__effect"
+          className={`under__effect ${
+            pathname === "/contact" ? "under__lock" : ""
+          }`}
           onMouseEnter={() => disPatcher("/contact")}
         >
-          Contact Me
+          <Link
+            to="/contact"
+            onClick={(e) =>
+              pathname === "/contact" ? e.preventDefault() : null
+            }
+          >
+            Contact Me
+          </Link>
         </li>
       </ul>
     </div>

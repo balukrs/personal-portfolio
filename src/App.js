@@ -3,6 +3,7 @@ import Showcase from "./components/showcase/showcase";
 import About from "./components/about/about";
 import Navbar from "./components/navbar/navbar";
 import Project from "./components/projects/main";
+import Contact from "./components/contact/contact";
 import { Route, Switch } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router";
@@ -20,6 +21,7 @@ const App = () => {
             <Route path="/" exact component={Showcase}></Route>
             <Route path="/about" component={About}></Route>
             <Route path="/projects" component={Project}></Route>
+            <Route path="/contact" component={Contact}></Route>
           </Switch>
         </AnimatePresence>
       </Store>

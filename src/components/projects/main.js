@@ -31,6 +31,12 @@ const mainVariants = {
       type: "spring",
     },
   },
+  exit: {
+    x: "-100vw",
+    transition: {
+      ease: "easeInOut",
+    },
+  },
 };
 
 const Projectmain = () => {
@@ -107,6 +113,7 @@ const Projectmain = () => {
       variants={mainVariants}
       initial="hidden"
       animate="visible"
+      exit="exit"
     >
       <section
         className="relative mt-10"
