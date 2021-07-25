@@ -60,13 +60,13 @@ const Contact = () => {
 
   return (
     <motion.div
-      className="flex justify-center w-full mt-10 md:items-center md:flex-col"
+      className="relative flex justify-center w-full h-full mt-10 md:items-center md:flex-col"
       variants={mainVariants}
       initial="hidden"
       animate="visible"
       exit="exit"
     >
-      <section className="w-4/12 p-4 text-white bg-gray-800 md:w-9/12 md:-mt-6 ">
+      <section className="z-10 w-4/12 p-4 text-white bg-gray-800 md:w-9/12 md:-mt-6">
         <div>
           <h2 className="mb-2 text-3xl font-bold text-green-300">
             Get in touch
@@ -86,7 +86,7 @@ const Contact = () => {
           <span className="ml-3 ">balukrs90@gmail.com</span>
         </div>
       </section>
-      <section className="w-4/12 p-2 ml-2 overflow-hidden border-8 md:w-9/12 md:-ml-0 md:mt-2">
+      <section className="z-10 w-4/12 p-2 ml-2 overflow-hidden bg-white border-8 md:w-9/12 md:-ml-0 md:mt-2">
         <h1 className="text-3xl ">Enter Details</h1>
         <form className="p-2 text-gray-500" onSubmit={sendEmail}>
           <div className="mb-2">
