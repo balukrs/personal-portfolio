@@ -217,16 +217,15 @@ const About = () => {
         initial="abouthide"
         animate={controls}
       >
-        <p>
-          " By default, Motion will create an appropriate animation for a snappy
-          transition based on the types of value being animated. For instance,
-          physical properties like x or scale will be animated via a spring
-          simulation. Whereas values like opacity or color will be animated with
-          a tween. When a component mounts, it'll automatically animate to the
-          values in animate if they're different from those defined in style or
-          initial. You can set the initial prop to false to use the value in
-          animate as the component's mounted state to disable mount animations.
-          "
+        <p className="text-xl ">
+          " I am a web developer with one plus years of experience seeking an
+          opportunity to usemy web development skills and knowledge. I love
+          learning new tools and, in the process,I developed coding skills for
+          building dynamic web applications and websites."
+        </p>
+        <p className="font-bold ">
+          {" "}
+          Thank you for visiting my portfolio website.{" "}
         </p>
       </motion.div>
     </motion.div>

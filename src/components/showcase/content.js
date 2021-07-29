@@ -4,9 +4,11 @@ import aboutimage from "../../assets/loader/img_1.webp";
 import projectimage from "../../assets/loader/img_2.webp";
 import contactimage from "../../assets/loader/img_3.webp";
 import Me from "../../assets/me.webp";
-import { GrLinkedin } from "react-icons/gr";
+import resume from "../../assets/resume.pdf";
+import { ImGithub } from "react-icons/im";
 import { motion, useAnimation } from "framer-motion";
 import { Context } from "../../context";
+import { Link } from "react-router-dom";
 
 const testVariable = {
   hidden: {
@@ -93,18 +95,25 @@ const Content = () => {
             </span>
           </div>
           <div className="flex flex-col items-center justify-center mt-8">
-            <span className="font-light font-amiri">
-              balukrs@balukrishna.com
-            </span>
+            <span className="font-light font-amiri">balukrs90@gmail.com</span>
             <span className="mb-2 font-light font-amiri">+91 9567668998</span>
-            <button className="mb-6 transition-all transform scale-1 hover:scale-75">
-              <GrLinkedin size="1.5em" />
-            </button>
+            <a
+              className="mb-6 transition-all transform scale-1 hover:scale-75"
+              href="https://github.com/balukrs"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <ImGithub size="1.8em" />
+            </a>
           </div>
           <div>
-            <button className="p-2 text-gray-100 transition duration-300 bg-gray-700 border-2 border-gray-700 rounded hover:bg-white hover:text-gray-900 drop-shadow-xl">
+            <Link
+              className="p-2 text-gray-100 transition duration-300 bg-gray-700 border-2 border-gray-700 rounded hover:bg-white hover:text-gray-900 drop-shadow-xl"
+              to={resume}
+              target="_blank"
+            >
               Download CV
-            </button>
+            </Link>
           </div>
         </div>
       </motion.section>
